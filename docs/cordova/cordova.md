@@ -26,6 +26,9 @@
 
 ## electron 平台
 
+打包为exe
+<code>cordova build electron --release  </code>
+
 - 不支持使用 cookie,得用本地缓存记录
 
 - 如果出现白屏(404 等找不到对应的 js、css 文件)，需要把 Routes 里的 history 改成 Hash
