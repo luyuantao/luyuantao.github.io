@@ -81,8 +81,6 @@ Android 9 以上默认禁用明文传输，再次允许明文传输需要在 con
     <preference name="Scheme" value="http" />
 </widget>
 
-```
-
 # 1-需要查看打包调试需要输入指令 
 
 ```
@@ -106,3 +104,37 @@ cordova build electron --release
 ## 1-在最外层的config.xml中配置
 
 ### 注意:图片格式必须为512*512
+
+```
+<widget id="com.example.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <platform name="electron">
+        <preference name="ElectronSettingsFilePath" value="./settings.json" />
+        <icon src="./img/hhf.png" target="app"/>
+        <icon src="./img/hhf.png" target="installer"/>
+    </platform>
+</widget>
+```
+
+# 5-配置系统不显示原有的操作栏,显示正常的关闭
+
+## 操作位置
+
+```
+platforms\electron\platform_www\cdv-electron-main.js
+```
+
+## 内容
+
+```
+1-
+const {
+    Menu
+} = require('electron');
+
+2-
+function createWindow () {
+    Menu.setApplicationMenu(null);
+    }
+
+```
+
