@@ -63,7 +63,9 @@ Android 9 以上默认禁用明文传输，再次允许明文传输需要在 con
 <preference name="Scheme" value="http" />
 
 ```
-
+```
+5-18新增
+```
 ```xml
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.example.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
@@ -80,3 +82,27 @@ Android 9 以上默认禁用明文传输，再次允许明文传输需要在 con
 </widget>
 
 ```
+
+# 1-需要查看打包调试需要输入指令 
+
+```
+cordova build electron --debug
+```
+
+# 2-需要查看调试需要输入指令 
+
+```
+cordova run electron --nobuil 
+```
+
+# 3-打包---禁止调试
+
+```
+cordova build electron --release     
+```
+
+# 4-配置图标
+
+## 1-在最外层的config.xml中配置
+
+### 注意:图片格式必须为512*512
